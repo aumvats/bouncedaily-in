@@ -1,29 +1,35 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import TrustedBy from "@/components/TrustedBy";
-import Mission from "@/components/Mission";
-import ProductShowcase from "@/components/ProductShowcase";
-import HowItWorks from "@/components/HowItWorks";
-import Testimonials from "@/components/Testimonials";
-import Press from "@/components/Press";
-import Franchise from "@/components/Franchise";
-import ClosingCTA from "@/components/ClosingCTA";
-import Footer from "@/components/Footer";
+import Preloader from "@/components/Preloader";
+import HeroSection from "@/components/HeroSection";
+import ProblemSection from "@/components/ProblemSection";
+import ScooterReveal from "@/components/ScooterReveal";
+import PlatformSection from "@/components/PlatformSection";
+import TrustedByMarquee from "@/components/TrustedByMarquee";
+import EarningsCalculator from "@/components/EarningsCalculator";
+import RiderStories from "@/components/RiderStories";
+import MetricsSection from "@/components/MetricsSection";
+import PressSection from "@/components/PressSection";
+import PartnerSection from "@/components/PartnerSection";
+import VisionCTA from "@/components/VisionCTA";
+import FooterDark from "@/components/FooterDark";
 
 export default function Home() {
   return (
     <>
+      <Preloader />
       <Navbar />
-      <Hero />
-      <TrustedBy />
-      <Mission />
-      <ProductShowcase />
-      <HowItWorks />
-      <Testimonials />
-      <Press />
-      <Franchise />
-      <ClosingCTA />
-      <Footer />
+      <HeroSection />
+      <ProblemSection />
+      <ScooterReveal />
+      <PlatformSection />
+      <TrustedByMarquee />
+      <EarningsCalculator />
+      <RiderStories />
+      <MetricsSection />
+      <PressSection />
+      <PartnerSection />
+      <VisionCTA />
+      <FooterDark />
     </>
   );
 }

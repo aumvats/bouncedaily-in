@@ -81,7 +81,7 @@ export default function Footer() {
               Company
             </p>
             <nav className="mt-6 flex flex-col gap-3">
-              {footerLinks.map((link) => (
+              {footerLinks.company.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}

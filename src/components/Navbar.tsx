@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import { navLinks, siteConfig } from "@/lib/data";
 
 export default function Navbar() {
@@ -16,13 +17,13 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-xl border-b border-border"
+          ? "bg-void/70 backdrop-blur-2xl border-b border-border"
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <a href="#home" className="flex-shrink-0" title="Bounce Daily - Home">
@@ -31,9 +32,7 @@ export default function Navbar() {
               alt="Bounce Daily"
               width={120}
               height={40}
-              className={`h-9 w-auto transition-all duration-300 ${
-                scrolled ? "" : "brightness-0 invert"
-              }`}
+              className="h-9 w-auto brightness-0 invert"
               priority
             />
           </a>
@@ -44,11 +43,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-sm transition-colors duration-200 ${
-                  scrolled
-                    ? "text-muted hover:text-foreground"
-                    : "text-white/60 hover:text-white"
-                }`}
+                className="text-sm text-muted hover:text-foreground transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -60,7 +55,7 @@ export default function Navbar() {
             href={siteConfig.playStoreUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center justify-center rounded-full bg-brand px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-dark"
+            className="hidden md:inline-flex items-center justify-center rounded-full bg-neon px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:shadow-[0_0_20px_var(--color-neon-glow)]"
           >
             Download App
           </a>
@@ -72,49 +67,57 @@ export default function Navbar() {
             aria-label="Toggle menu"
           >
             <span
-              className={`block h-0.5 w-5 transition-all duration-200 ${
-                scrolled ? "bg-foreground" : "bg-white"
-              } ${mobileOpen ? "translate-y-2 rotate-45" : ""}`}
+              className={`block h-0.5 w-5 bg-foreground transition-all duration-200 ${
+                mobileOpen ? "translate-y-2 rotate-45" : ""
+              }`}
             />
             <span
-              className={`block h-0.5 w-5 transition-all duration-200 ${
-                scrolled ? "bg-foreground" : "bg-white"
-              } ${mobileOpen ? "opacity-0" : ""}`}
+              className={`block h-0.5 w-5 bg-foreground transition-all duration-200 ${
+                mobileOpen ? "opacity-0" : ""
+              }`}
             />
             <span
-              className={`block h-0.5 w-5 transition-all duration-200 ${
-                scrolled ? "bg-foreground" : "bg-white"
-              } ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`}
+              className={`block h-0.5 w-5 bg-foreground transition-all duration-200 ${
+                mobileOpen ? "-translate-y-2 -rotate-45" : ""
+              }`}
             />
           </button>
         </div>
       </div>
 
       {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-xl border-b border-border">
-          <div className="px-6 py-6 flex flex-col gap-4">
-            {navLinks.map((link) => (
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden bg-void/95 backdrop-blur-2xl border-b border-border"
+          >
+            <div className="px-6 py-6 flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="text-base text-muted hover:text-foreground transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
               <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="text-base text-muted hover:text-foreground transition-colors"
+                href={siteConfig.playStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-flex items-center justify-center rounded-full bg-neon px-5 py-2.5 text-sm font-medium text-white"
               >
-                {link.label}
+                Download App
               </a>
-            ))}
-            <a
-              href={siteConfig.playStoreUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white"
-            >
-              Download App
-            </a>
-          </div>
-        </div>
-      )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

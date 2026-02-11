@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import SmoothScrollProvider from "@/providers/SmoothScrollProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -8,18 +9,32 @@ const inter = Inter({
   display: "swap",
 });
 
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Bounce Daily — India's Electric Mobility Revolution",
+  title: "Bounce Daily — Electrifying India's Last Mile",
   description:
-    "100% electric scooter rentals for gig workers. Zero emissions, maximum earnings. Ride clean, earn more.",
+    "The full-stack electric mobility platform powering 15,000+ delivery riders across India. Vehicles, batteries, swap stations, fleet intelligence — one system.",
   openGraph: {
-    title: "Bounce Daily — India's Electric Mobility Revolution",
+    title: "Bounce Daily — Electrifying India's Last Mile",
     description:
-      "100% electric scooter rentals for gig workers. Zero emissions, maximum earnings.",
+      "The full-stack electric mobility platform powering 15,000+ delivery riders across India.",
     url: "https://bouncedaily.in",
     siteName: "Bounce Daily",
     type: "website",
   },
+  metadataBase: new URL("https://bouncedaily.in"),
+  themeColor: "#050507",
 };
 
 export default function RootLayout({
@@ -28,9 +43,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} font-sans antialiased`}>
-        {children}
+    <html lang="en" className="dark">
+      <body
+        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+      >
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
   );

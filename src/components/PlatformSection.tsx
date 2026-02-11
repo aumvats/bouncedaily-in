@@ -53,7 +53,7 @@ export default function PlatformSection() {
     <section
       ref={sectionRef}
       id="platform"
-      className="relative py-[15vh] md:py-[20vh]"
+      className="relative py-12 md:py-20"
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <SectionLabel>The Platform</SectionLabel>
@@ -70,12 +70,12 @@ export default function PlatformSection() {
           </p>
         </div>
 
-        <div ref={stackRef} className="mt-16 flex flex-col gap-4">
+        <div ref={stackRef} className="mt-10 flex flex-col gap-4">
           {platformStack.map((item, i) => (
             <div
               key={item.layer}
-              className="group relative flex items-start gap-6 rounded-2xl border border-border bg-surface p-6 md:p-8 transition-all duration-500 hover:border-border-hover hover:bg-surface-2"
-              style={{ marginLeft: `${i * 24}px` }}
+              className="group relative flex items-start gap-6 rounded-2xl border border-border bg-surface p-6 md:p-8 transition-all duration-500 hover:border-border-hover hover:bg-surface-2 max-md:!ml-0"
+              style={{ marginLeft: i > 0 ? `${i * 24}px` : undefined }}
             >
               {/* Layer badge */}
               <div className="shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-surface-2 border border-border group-hover:border-neon/30 transition-colors">

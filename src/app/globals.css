@@ -23,6 +23,12 @@
   --color-electric: #00f0ff;
   --color-electric-glow: #00f0ff1a;
 
+  /* ── Light-version aliases (overridden via inline styles on /light) ── */
+  --color-brand: #ff2d2d;
+  --color-brand-dark: #cc2424;
+  --color-subtle: #111118;
+  --color-background: #050507;
+
   /* ── Fonts ── */
   --font-sans: var(--font-inter);
   --font-display: var(--font-space-grotesk);

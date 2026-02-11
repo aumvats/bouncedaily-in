@@ -95,9 +95,21 @@ export default function FooterDark() {
               Contact
             </h4>
             <ul className="flex flex-col gap-2">
-              <li className="text-sm text-dim">{siteConfig.phone}</li>
-              <li className="text-sm text-dim">{siteConfig.email}</li>
-              <li className="text-sm text-dim">{siteConfig.location}</li>
+              <li>
+                <a href={`tel:${siteConfig.phone}`} className="text-sm text-dim hover:text-foreground transition-colors duration-200">
+                  {siteConfig.phone}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${siteConfig.email}`} className="text-sm text-dim hover:text-foreground transition-colors duration-200">
+                  {siteConfig.email}
+                </a>
+              </li>
+              <li>
+                <a href={siteConfig.stationsUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-dim hover:text-foreground transition-colors duration-200">
+                  {siteConfig.location}
+                </a>
+              </li>
             </ul>
           </div>
         </div>

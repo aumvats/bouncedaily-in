@@ -8,6 +8,7 @@ interface NeonButtonProps {
   children: React.ReactNode;
   variant?: Variant;
   href?: string;
+  external?: boolean;
   onClick?: () => void;
   className?: string;
 }
@@ -16,11 +17,13 @@ export default function NeonButton({
   children,
   variant = "solid",
   href,
+  external,
   onClick,
   className = "",
 }: NeonButtonProps) {
+  const isExternal = external ?? (href ? /^https?:\/\//.test(href) || href.startsWith("mailto:") : false);
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium tracking-wide transition-all duration-300 cursor-pointer";
+    "inline-flex items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium tracking-wide transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-void";
 
   const variants: Record<Variant, string> = {
     solid:
@@ -39,7 +42,12 @@ export default function NeonButton({
 
   if (href) {
     return (
-      <motion.a href={href} className={classes} {...motionProps}>
+      <motion.a
+        href={href}
+        className={classes}
+        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        {...motionProps}
+      >
         {children}
       </motion.a>
     );

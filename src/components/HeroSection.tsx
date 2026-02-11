@@ -69,7 +69,7 @@ export default function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      id="home"
+      id="main-content"
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
     >
       {/* Radial glow background */}
@@ -115,7 +115,7 @@ export default function HeroSection() {
           {/* Right — Scooter Image */}
           <div
             ref={scooterRef}
-            className="relative hidden lg:flex items-center justify-center"
+            className="relative hidden md:flex items-center justify-center"
           >
             {/* Neon glow behind scooter */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -128,6 +128,7 @@ export default function HeroSection() {
               alt="Bounce Daily Electric Scooter"
               width={600}
               height={500}
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="relative z-10 drop-shadow-[0_0_40px_rgba(255,45,45,0.3)] w-full max-w-[500px] h-auto"
               priority
             />

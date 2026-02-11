@@ -23,7 +23,8 @@ export default function StatCounter({
   duration = 1.6,
   className = "",
 }: StatCounterProps) {
-  const [display, setDisplay] = useState(0);
+  const hasDecimals = value % 1 !== 0;
+  const [display, setDisplay] = useState("0");
   const ref = useRef<HTMLDivElement>(null);
   const hasAnimated = useRef(false);
 
@@ -42,13 +43,13 @@ export default function StatCounter({
           val: value,
           duration,
           ease: "power2.out",
-          onUpdate: () => setDisplay(Math.round(obj.val)),
+          onUpdate: () => setDisplay(hasDecimals ? obj.val.toFixed(1) : String(Math.round(obj.val))),
         });
       },
     });
 
     return () => trigger.kill();
-  }, [value, duration]);
+  }, [value, duration, hasDecimals]);
 
   return (
     <div ref={ref} className={className}>

@@ -71,7 +71,7 @@ export default function EarningsCalculator() {
     <section
       ref={sectionRef}
       id="calculator"
-      className="relative py-[15vh] md:py-[20vh]"
+      className="relative py-12 md:py-20 bg-surface"
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <div className="calc-reveal">
@@ -84,7 +84,7 @@ export default function EarningsCalculator() {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Inputs */}
           <div className="calc-reveal flex flex-col gap-8">
             {/* Platform selector */}
@@ -98,7 +98,7 @@ export default function EarningsCalculator() {
                     key={opt.value}
                     type="button"
                     onClick={() => setPlatform(opt.value)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border ${
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-void ${
                       platform === opt.value
                         ? "bg-neon text-white border-neon shadow-[0_0_15px_var(--color-neon-glow)]"
                         : "bg-surface-2 text-muted border-border hover:border-border-hover hover:text-foreground"
@@ -121,7 +121,7 @@ export default function EarningsCalculator() {
                     key={opt.value}
                     type="button"
                     onClick={() => setCity(opt.value)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border ${
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-void ${
                       city === opt.value
                         ? "bg-neon text-white border-neon shadow-[0_0_15px_var(--color-neon-glow)]"
                         : "bg-surface-2 text-muted border-border hover:border-border-hover hover:text-foreground"
@@ -145,7 +145,7 @@ export default function EarningsCalculator() {
                   max={14}
                   value={hours}
                   onChange={(e) => setHours(Number(e.target.value))}
-                  className="flex-1 accent-neon h-1 bg-surface-3 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-neon [&::-webkit-slider-thumb]:shadow-[0_0_10px_var(--color-neon-glow)]"
+                  className="flex-1 accent-neon h-1 bg-surface-3 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-neon [&::-webkit-slider-thumb]:shadow-[0_0_10px_var(--color-neon-glow)] [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-neon [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:shadow-[0_0_10px_var(--color-neon-glow)]"
                 />
                 <span className="font-mono text-lg font-bold text-foreground w-10 text-right">
                   {hours}h

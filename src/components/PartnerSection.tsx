@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SectionLabel from "@/components/ui/SectionLabel";
 import GlowCard from "@/components/ui/GlowCard";
 import NeonButton from "@/components/ui/NeonButton";
-import { franchiseBenefits } from "@/lib/data";
+import { franchiseBenefits, siteConfig } from "@/lib/data";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,7 +49,7 @@ export default function PartnerSection() {
     <section
       ref={sectionRef}
       id="partner"
-      className="relative py-[15vh] md:py-[20vh] bg-surface"
+      className="relative py-12 md:py-20 bg-surface"
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <SectionLabel>Partner With Us</SectionLabel>
@@ -88,10 +88,10 @@ export default function PartnerSection() {
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <NeonButton variant="solid">
+              <NeonButton href={`mailto:${siteConfig.email}?subject=Pitch Deck Request`} variant="solid">
                 Download Pitch Deck
               </NeonButton>
-              <NeonButton variant="ghost">
+              <NeonButton href={`mailto:${siteConfig.email}?subject=Investor Call Request`} variant="ghost">
                 Schedule a Call
               </NeonButton>
             </div>

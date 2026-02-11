@@ -56,13 +56,13 @@ export default function ProblemSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-[15vh] md:py-[20vh]"
+      className="relative py-12 md:py-20"
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <SectionLabel>The Problem</SectionLabel>
 
         <div ref={headlineRef} className="mt-4">
-          <span className="font-mono text-[clamp(4rem,10vw,9rem)] font-bold text-foreground leading-none tracking-tight">
+          <span className="font-mono text-[clamp(2.5rem,10vw,9rem)] font-bold text-foreground leading-none tracking-tight">
             {problemStats.headline}
           </span>
           <p className="mt-4 text-xl md:text-2xl text-muted max-w-lg">
@@ -72,7 +72,7 @@ export default function ProblemSection() {
 
         <div
           ref={cardsRef}
-          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6"
+          className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6"
         >
           {problemStats.cards.map((card) => (
             <GlowCard key={card.label}>

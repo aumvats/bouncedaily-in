@@ -38,7 +38,7 @@ export default function MetricsSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-[15vh] md:py-[20vh]"
+      className="relative py-12 md:py-20 bg-surface"
     >
       {/* Subtle grid background */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
@@ -61,7 +61,7 @@ export default function MetricsSection() {
 
         <div
           ref={gridRef}
-          className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12"
+          className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12"
         >
           {metrics.map((metric) => (
             <StatCounter

@@ -67,7 +67,7 @@ export default function ScooterReveal() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-[10vh] md:py-[15vh]">
+    <section ref={sectionRef} className="relative py-12 md:py-20 bg-surface">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <SectionLabel>The Vehicle</SectionLabel>
 
@@ -95,6 +95,7 @@ export default function ScooterReveal() {
                 alt="Bounce Daily Electric Scooter"
                 width={500}
                 height={420}
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="drop-shadow-[0_0_60px_rgba(255,45,45,0.25)] w-3/4 h-auto object-contain"
               />
             </div>
@@ -129,6 +130,12 @@ export default function ScooterReveal() {
                 </div>
               ))}
             </div>
+
+            {vehicle.noDLNote && (
+              <p className="mt-6 text-sm text-muted italic">
+                {vehicle.noDLNote}
+              </p>
+            )}
           </div>
         </div>
       </div>

@@ -1,12 +1,14 @@
 import { createClient, type QueryParams } from "next-sanity";
-import { apiVersion, dataset, projectId } from "../env";
+import { apiVersion, dataset, projectId, isSanityConfigured } from "../env";
 
-export const client = createClient({
-  projectId,
-  dataset,
-  apiVersion,
-  useCdn: true,
-});
+export const client = isSanityConfigured
+  ? createClient({
+      projectId,
+      dataset,
+      apiVersion,
+      useCdn: true,
+    })
+  : null;
 
 export async function sanityFetch<QueryResult>({
   query,
@@ -19,6 +21,7 @@ export async function sanityFetch<QueryResult>({
   revalidate?: number | false;
   tags?: string[];
 }): Promise<QueryResult> {
+  if (!client) return [] as unknown as QueryResult;
   return client.fetch<QueryResult>(query, params, {
     next: {
       revalidate: tags.length ? false : revalidate,

@@ -24,11 +24,11 @@ export const navLinks = [
   { label: "Blog", href: "/blog" },
 ];
 
-/* ── Hero Stats (live-feel ticker) ── */
+/* ── Hero Stats ── */
 export const heroStats = [
-  { value: 15847, label: "riders active right now" },
-  { value: 247, label: "battery swaps in the last hour" },
-  { value: 12456, label: "km driven today" },
+  { value: 15847, label: "active riders" },
+  { value: 247, label: "swap stations" },
+  { value: 12456, label: "km driven daily" },
 ];
 
 /* ── The Problem ── */
@@ -107,21 +107,45 @@ export const testimonials = [
       "I used to spend ₹200 on petrol every day. Now that money stays in my pocket. The swap station is right on my delivery route — I lose zero time.",
     name: "Rajesh K.",
     role: "Swiggy rider, Bengaluru",
+    platform: "Swiggy",
     metric: "₹6,000/month saved",
+    rating: 5,
   },
   {
     quote:
       "No breakdowns, no mechanic visits, no engine oil. I just ride. In eight months, I haven't spent a single rupee on maintenance.",
     name: "Mohammed I.",
     role: "Zomato rider, Hyderabad",
+    platform: "Zomato",
     metric: "₹0 maintenance",
+    rating: 5,
   },
   {
     quote:
       "My earnings went up 20% after switching. The scooter is always charged, always ready. I finish more orders in a day now.",
     name: "Priya S.",
     role: "Blinkit rider, Delhi NCR",
+    platform: "Blinkit",
     metric: "+20% earnings",
+    rating: 5,
+  },
+  {
+    quote:
+      "Battery swap takes 2 minutes. I used to waste 40 minutes at a petrol pump during peak hours. Now I'm back on the road before anyone else.",
+    name: "Vikram D.",
+    role: "Zepto rider, Bengaluru",
+    platform: "Zepto",
+    metric: "38 min/day saved",
+    rating: 4,
+  },
+  {
+    quote:
+      "I was sceptical at first — electric for delivery? But after one week I knew I'm never going back. It's quieter, cheaper, and just works.",
+    name: "Suresh T.",
+    role: "Swiggy rider, Chennai",
+    platform: "Swiggy",
+    metric: "12 months & counting",
+    rating: 5,
   },
 ];
 
@@ -178,8 +202,238 @@ export const footerLinks = {
     { label: "Investor Relations", href: "#partner" },
   ],
   legal: [
-    { label: "Terms of Service", href: "/terms" },
-    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "#" },
+    { label: "Privacy Policy", href: "#" },
+  ],
+};
+
+/* ═══════════════════════════════════════════════════════════════
+   V2 — Overarching "Full-Stack EV Infra" data
+   ═══════════════════════════════════════════════════════════════ */
+
+export const v2SiteConfig = {
+  name: "Bounce Daily",
+  tagline: "Full-Stack EV Infrastructure.",
+  description:
+    "India's full-stack EV infrastructure company. From manufacturing to gig fleet rentals to consumer mobility — one platform.",
+  playStoreUrl: siteConfig.playStoreUrl,
+  stationsUrl: siteConfig.stationsUrl,
+  phone: siteConfig.phone,
+  email: siteConfig.email,
+  location: siteConfig.location,
+  socials: siteConfig.socials,
+};
+
+export const v2NavLinks = [
+  { label: "Manufacturing", href: "/v2/manufacturing" },
+  { label: "Gig Rentals", href: "/v2/gig-rentals" },
+  { label: "Consumer Rentals", href: "/v2/consumer-rentals" },
+  { label: "Blog", href: "/blog" },
+];
+
+export const v2FooterLinks = {
+  product: [
+    { label: "Manufacturing", href: "/v2/manufacturing" },
+    { label: "Gig Rentals", href: "/v2/gig-rentals" },
+    { label: "Consumer Rentals", href: "/v2/consumer-rentals" },
+    { label: "Find a Hub", href: "https://maps.google.com" },
+  ],
+  company: [
+    { label: "Careers", href: "/careers" },
+    { label: "Blog", href: "/blog" },
+    { label: "Press Kit", href: "/v2/gig-rentals#press" },
+    { label: "Investor Relations", href: "/v2/gig-rentals#partner" },
+  ],
+  legal: [
+    { label: "Terms of Service", href: "#" },
+    { label: "Privacy Policy", href: "#" },
+  ],
+};
+
+export const homeHeroData = {
+  headline: "Full-Stack EV Infrastructure.",
+  subheadline:
+    "From factory floor to last mile. Bounce Daily manufactures electric vehicles, powers India's gig delivery fleet, and brings affordable EV commuting to consumers — all through one integrated platform.",
+  stats: [
+    { value: 15847, label: "EVs on the road" },
+    { value: 5, label: "Cities operational" },
+    { value: 30, suffix: "M+", label: "Kilometres driven" },
+  ],
+};
+
+export const verticals = [
+  {
+    id: "manufacturing",
+    title: "Manufacturing",
+    tagline: "From shop floor to street",
+    description:
+      "Purpose-built electric vehicles designed for commercial durability and daily commuting. Made in India, for India.",
+    href: "/v2/manufacturing",
+    accentColor: "neon" as const,
+  },
+  {
+    id: "gig-rentals",
+    title: "Gig Rentals",
+    tagline: "Powering India's delivery economy",
+    description:
+      "15,000+ riders on Swiggy, Zomato, Blinkit, and more ride electric with Bounce Daily. Zero fuel cost, zero maintenance.",
+    href: "/v2/gig-rentals",
+    accentColor: "electric" as const,
+  },
+  {
+    id: "consumer-rentals",
+    title: "Consumer Rentals",
+    tagline: "Your daily commute, electrified",
+    description:
+      "Affordable EV subscriptions for everyday commuters. No EMIs, no parking headaches. Just ride.",
+    href: "/v2/consumer-rentals",
+    accentColor: "neon" as const,
+  },
+];
+
+export const commuteTypes = [
+  {
+    title: "Last-mile delivery",
+    description:
+      "Powering Swiggy, Zomato, Blinkit riders across 5 cities. 200+ km/day capable.",
+    icon: "package",
+  },
+  {
+    title: "Daily office commute",
+    description:
+      "Subscription scooters for 9-to-5 professionals. Swap batteries, skip traffic.",
+    icon: "briefcase",
+  },
+  {
+    title: "Campus & intra-city",
+    description:
+      "Short trips within tech parks, university campuses, and gated communities.",
+    icon: "building",
+  },
+  {
+    title: "Hyperlocal errands",
+    description:
+      "Grocery runs, pharmacy trips, weekend rides. On-demand, always charged.",
+    icon: "shopping-bag",
+  },
+];
+
+export const manufacturingData = {
+  hero: {
+    headline: "Built in India. Built for India.",
+    subheadline:
+      "Purpose-engineered electric vehicles designed for commercial durability and daily commuting. Every scooter rolls off our line ready for the demands of Indian roads.",
+  },
+  designPrinciples: [
+    {
+      title: "Commercial durability",
+      description:
+        "Engineered for 200+ km/day usage. Frames, motors, and controllers built to survive millions of delivery runs.",
+    },
+    {
+      title: "Swappable battery architecture",
+      description:
+        "Modular battery design enabling 2-minute swaps at our growing station network. Zero downtime, maximum uptime.",
+    },
+    {
+      title: "Software-defined vehicle",
+      description:
+        "OTA updates, remote diagnostics, predictive maintenance — all built into every unit that leaves the factory.",
+    },
+    {
+      title: "Made for Indian roads",
+      description:
+        "Suspension, ground clearance, and thermal management specifically tuned for Indian terrain and climate.",
+    },
+  ],
+  factoryMetrics: [
+    { value: 25, suffix: "K+", label: "Vehicles manufactured" },
+    { value: 150, suffix: "+", label: "Component suppliers" },
+    { value: 98, suffix: "%", label: "Localization rate" },
+    { value: 3, label: "Vehicle models" },
+  ],
+};
+
+export const consumerData = {
+  hero: {
+    headline: "Your daily commute, electrified.",
+    subheadline:
+      "Affordable EV subscriptions. No EMIs. No parking headaches. No mechanic visits. Just pick up a scooter and ride.",
+  },
+  plans: [
+    {
+      name: "Daily",
+      price: "149",
+      period: "/day",
+      features: [
+        "Unlimited km",
+        "Battery swap included",
+        "Roadside assistance",
+      ],
+    },
+    {
+      name: "Weekly",
+      price: "899",
+      period: "/week",
+      features: [
+        "Unlimited km",
+        "Battery swap included",
+        "Roadside assistance",
+        "Free helmet",
+      ],
+      popular: true,
+    },
+    {
+      name: "Monthly",
+      price: "2,999",
+      period: "/month",
+      features: [
+        "Unlimited km",
+        "Battery swap included",
+        "Roadside assistance",
+        "Free helmet",
+        "Priority support",
+      ],
+    },
+  ],
+  steps: [
+    {
+      number: "01",
+      title: "Download",
+      description: "Get the Bounce app from Google Play Store.",
+    },
+    {
+      number: "02",
+      title: "Subscribe",
+      description: "Choose a daily, weekly, or monthly plan that fits you.",
+    },
+    {
+      number: "03",
+      title: "Pick up",
+      description: "Collect your scooter from the nearest Bounce hub.",
+    },
+    {
+      number: "04",
+      title: "Ride",
+      description:
+        "Commute electric. Swap batteries at any station. Return when done.",
+    },
+  ],
+  testimonials: [
+    {
+      quote:
+        "I cancelled my Ola subscription. Bounce is half the cost and the scooter is always ready when I need it.",
+      name: "Ananya R.",
+      role: "Software engineer, Bengaluru",
+      metric: "₹4,000/month saved",
+    },
+    {
+      quote:
+        "No more fighting for parking. I ride to work, swap battery at lunch, ride home. It just works.",
+      name: "Karthik M.",
+      role: "Product manager, Hyderabad",
+      metric: "Zero parking stress",
+    },
   ],
 };
 
@@ -227,4 +481,19 @@ export const steps = [
     title: "Ride",
     description: "You\u2019re on the road. Start delivering, start earning.",
   },
+];
+
+/* ── Light Version (Original) ── */
+export const lightNavLinks = [
+  { label: "Vehicles", href: "#vehicles" },
+  { label: "How It Works", href: "#how-it-works" },
+  { label: "Stories", href: "#stories" },
+  { label: "Franchise", href: "#franchise" },
+];
+
+export const lightFooterLinks = [
+  { label: "Careers", href: "/careers" },
+  { label: "Blog", href: "/blog" },
+  { label: "Terms of Service", href: "/terms" },
+  { label: "Privacy Policy", href: "/privacy" },
 ];

@@ -497,3 +497,81 @@ export const lightFooterLinks = [
   { label: "Terms of Service", href: "/terms" },
   { label: "Privacy Policy", href: "/privacy" },
 ];
+
+/* ── Brutalist Version (Raw Industrial) ── */
+export const brutalistSiteConfig = {
+  name: "BOUNCE DAILY",
+  tagline: "RAW ELECTRIC POWER",
+  description: "Zero fuel. Maximum grind. 15,000+ delivery riders electrified.",
+  playStoreUrl: siteConfig.playStoreUrl,
+  stationsUrl: siteConfig.stationsUrl,
+  phone: siteConfig.phone,
+  email: siteConfig.email,
+  location: siteConfig.location,
+  socials: siteConfig.socials,
+};
+
+export const brutalistNavLinks = [
+  { label: "SPECS", href: "#specs" },
+  { label: "NUMBERS", href: "#numbers" },
+  { label: "RIDERS", href: "#riders" },
+  { label: "JOIN", href: "#join" },
+];
+
+export const brutalistStats = [
+  { value: "15847", label: "RIDERS", unit: "" },
+  { value: "247", label: "STATIONS", unit: "" },
+  { value: "12456", label: "KM/DAY", unit: "" },
+  { value: "0", label: "FUEL COST", unit: "₹" },
+];
+
+export const brutalistSpecs = [
+  { label: "SPEED", value: "65", unit: "KM/H" },
+  { label: "RANGE", value: "70", unit: "KM" },
+  { label: "SWAP", value: "2", unit: "MIN" },
+  { label: "COST", value: "0", unit: "₹/KM" },
+];
+
+export const brutalistQuotes = [
+  {
+    text: "₹6000 SAVED EVERY MONTH. NO MORE PETROL STOPS.",
+    author: "RAJESH K.",
+    platform: "SWIGGY",
+    city: "BENGALURU",
+  },
+  {
+    text: "ZERO MAINTENANCE. ZERO DOWNTIME. JUST RIDE.",
+    author: "MOHAMMED I.",
+    platform: "ZOMATO",
+    city: "HYDERABAD",
+  },
+  {
+    text: "20% MORE EARNINGS. BATTERY ALWAYS READY.",
+    author: "PRIYA S.",
+    platform: "BLINKIT",
+    city: "DELHI NCR",
+  },
+];
+
+export const brutalistPlatform = [
+  { title: "HARDWARE", description: "Vehicles. Batteries. Swap stations." },
+  { title: "NETWORK", description: "247 stations. 2-minute swaps. Zero downtime." },
+  { title: "SOFTWARE", description: "Fleet tracking. Rider ops. Payment system." },
+];
+
+export const brutalistFooterLinks = {
+  product: [
+    { label: "SPECS", href: "#specs" },
+    { label: "NUMBERS", href: "#numbers" },
+    { label: "FIND HUB", href: siteConfig.stationsUrl },
+  ],
+  company: [
+    { label: "CAREERS", href: "/careers" },
+    { label: "BLOG", href: "/blog" },
+    { label: "PRESS", href: "#press" },
+  ],
+  legal: [
+    { label: "TERMS", href: "#" },
+    { label: "PRIVACY", href: "#" },
+  ],
+};

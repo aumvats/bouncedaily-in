@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Inter, Space_Grotesk, JetBrains_Mono, Bebas_Neue, IBM_Plex_Mono, Oswald } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/providers/SmoothScrollProvider";
 
@@ -17,6 +17,27 @@ const spaceGrotesk = Space_Grotesk({
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const bebasNeue = Bebas_Neue({
+  weight: ["400"],
+  variable: "--font-bebas",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  weight: ["400", "500", "700"],
+  variable: "--font-ibm-mono",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const oswald = Oswald({
+  weight: ["700"],
+  variable: "--font-oswald",
   subsets: ["latin"],
   display: "swap",
 });
@@ -45,7 +66,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${bebasNeue.variable} ${ibmPlexMono.variable} ${oswald.variable} font-sans antialiased`}
       >
         <a
           href="#main-content"
